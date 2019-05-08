@@ -1,0 +1,17 @@
+name: cobrowseio_flutter
+description: A Flutter plugin to make use of cobrowse.io. View your app running remotely on customer devices. Guide the user, or take remote control.
+version: 1.0.0
+author: Robin Bonnes <robin@robodigital.nl>
+homepage: https://github.com/robinbonnes/cobrowseio_flutter
+
+environment:
+  sdk: ">=2.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  plugin:
+    androidPackage: nl.robodigital.plugin.cobrowseioflutter
+    pluginClass: CobrowseIOFlutterPlugin
