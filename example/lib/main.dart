@@ -1,3 +1,4 @@
+import 'dart:collection';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -17,7 +18,9 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState(){
     super.initState();
-    CobrowseIO.start("YOUR_LICENSE_KEY");
+    CobrowseIO.start("YOUR_LICENSE_KEY", {
+        'username': 'Test'
+    });
   }
 
   @override

@@ -18,7 +18,9 @@ To use this plugin, add cobrowseio_flutter as a dependency in your pubspec.yaml 
 `import 'package:cobrowseio_flutter/cobrowseio_flutter.dart';`
 
 ```dart
-    String result = await CobrowseIO.start("YOUR_LICENSE_KEY");
+    String result = await CobrowseIO.start("YOUR_LICENSE_KEY", {
+        'custom_data_field': 'Test'
+    });
 ```
 
 ### Plugins

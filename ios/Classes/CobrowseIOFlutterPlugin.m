@@ -22,8 +22,10 @@
 
 - (void)start:(FlutterMethodCall*)call result:(FlutterResult)result args:(NSDictionary*)args {
   NSString *licenseKey = [args objectForKey:@"licenseKey"];
+  NSDictionary *customData = [args objectForKey:@"customData"];
   if(licenseKey != nil ){
     CobrowseIO.instance.license = licenseeKey;
+    CobrowseIO.instance.customData = customData;
   }else{
     result([NSString stringWithFormat:@"[ start ERROR ] :: licenseKey is required"]);
   }

@@ -13,6 +13,7 @@ import io.cobrowse.core.CobrowseIO;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
+import java.util.HashMap;
 
 
 /**
@@ -53,7 +54,9 @@ public class CobrowseIOFlutterPlugin implements MethodCallHandler {
   public void handlerStart(MethodCall call, Result result) throws Exception {
     try {
       String licenseKey = call.argument("licenseKey").toString();
+      HashMap<String, Object> customData = call.argument("customData");
       CobrowseIO.instance().license(licenseKey);
+      CobrowseIO.instance().customData(customData);
       CobrowseIO.instance().start(this.activity);
       result.success("Started!");
     } catch (Exception ex) {
