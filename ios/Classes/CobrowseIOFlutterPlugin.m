@@ -1,4 +1,5 @@
 #import "CobrowseIOFlutterPlugin.h"
+//@import CobrowseIO;
 
 @implementation CobrowseIOFlutterPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -23,9 +24,10 @@
   NSString *licenseKey = [args objectForKey:@"licenseKey"];
   NSDictionary *customData = [args objectForKey:@"customData"];
   if(licenseKey != nil ){
-    @import CobrowseIO;
-    CobrowseIO.instance.license = licenseKey;
-    CobrowseIO.instance.customData = customData;
+    // Disable iOS for now until the permanent "Your screen is being shared" message is removed
+    // View: https://github.com/cobrowseio/cobrowse-sdk-ios-binary/issues/7
+    //CobrowseIO.instance.license = licenseKey;
+    //CobrowseIO.instance.customData = customData;
   }else{
     result([NSString stringWithFormat:@"[ start ERROR ] :: licenseKey is required"]);
   }
