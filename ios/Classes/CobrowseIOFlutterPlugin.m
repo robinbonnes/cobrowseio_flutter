@@ -1,5 +1,4 @@
 #import "CobrowseIOFlutterPlugin.h"
-@import CobrowseIO;
 
 @implementation CobrowseIOFlutterPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -24,6 +23,7 @@
   NSString *licenseKey = [args objectForKey:@"licenseKey"];
   NSDictionary *customData = [args objectForKey:@"customData"];
   if(licenseKey != nil ){
+    @import CobrowseIO;
     CobrowseIO.instance.license = licenseKey;
     CobrowseIO.instance.customData = customData;
   }else{
