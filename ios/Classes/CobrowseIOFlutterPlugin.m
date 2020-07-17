@@ -1,5 +1,5 @@
 #import "CobrowseIOFlutterPlugin.h"
-//@import CobrowseIO;
+@import CobrowseIO;
 
 @implementation CobrowseIOFlutterPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -26,6 +26,7 @@
   if(licenseKey != nil ){
     CobrowseIO.instance.license = licenseKey;
     CobrowseIO.instance.customData = customData;
+    [CobrowseIO.instance start];
   }else{
     result([NSString stringWithFormat:@"[ start ERROR ] :: licenseKey is required"]);
   }
