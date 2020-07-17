@@ -8,7 +8,7 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 
-import io.cobrowse.core.CobrowseIO;
+import io.cobrowse.CobrowseIO;
 
 import java.io.IOException;
 import java.io.InputStream;
